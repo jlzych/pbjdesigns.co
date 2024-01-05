@@ -1,0 +1,93 @@
+@font-face {
+  font-family: "Jaune";
+  src: url("/fonts/NaNJaune-MidiMedium.woff2");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Jaune";
+  src: url("/fonts/NaNJaune-MidiBlack.woff2");
+  font-weight: 800;
+}
+
+:root {
+  --logo-color: #E8D196;
+  --headline-color: #EDDBF7;
+  --subheadline-color: hsl(274 44% 82% / 1);
+
+  --body-font: "degular-variable", sans-serif;
+  --headline-font: "Jaune", Verdana, sans-serif;
+  --body-font-weight-bold: 'ital' 0, 'opsz' 6, 'wght' 650;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+body {
+  background: radial-gradient(100.61% 124.97% at 21.36% -4.02%, #9B46C2 0%, #682C8D 100%);
+  box-sizing: border-box;
+  font-size: 16px;
+  padding: 0 5vw;
+}
+
+.logo {
+  display: block;
+  margin: auto;
+  margin-top: 1rem;
+  width: 120px;
+  color: var(--logo-color);
+}
+
+h1 {
+  color: var(--headline-color);
+  text-align: center;
+  text-shadow: 1px 1px 2px #410860;
+  font-family: var(--headline-font);
+  font-size: 3.875rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 100%;
+}
+
+h2 {
+  color: #FCF7FF;
+  text-align: center;
+  font-family: var(--headline-font);
+  font-size: 1.625rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 128%;
+  /* 2.08rem */
+}
+
+.button {
+  display: inline-flex;
+  padding: 0.75rem 1.875rem 0.65rem;
+  align-items: flex-start;
+  gap: 0.625rem;
+
+  border-radius: 4.375rem;
+  border: 3px solid #1A0129;
+  background: #FFF;
+  box-shadow: 3px 3px 0px 0px #1A0129;
+
+  color: #5B1C7D;
+  text-align: center;
+  font-family: var(--body-font);
+  font-size: 1.375rem;
+  font-style: normal;
+  font-variation-settings: var(--body-font-weight-bold);
+  line-height: 98%;
+  text-decoration: none;
+  /* 1.43rem */
+}
+
+.cta {
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+}
