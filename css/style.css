@@ -80,6 +80,10 @@ body {
   color: var(--logo-color);
 }
 
+:is(h1, h2, h3, h4) {
+  text-wrap: balance;
+}
+
 h1 {
   color: var(--headline-color);
   text-align: center;
@@ -88,7 +92,7 @@ h1 {
   font-size: 3.875rem;
   font-style: normal;
   font-weight: 800;
-  line-height: 100%;
+  line-height: 120%;
 }
 
 h2 {
@@ -141,6 +145,11 @@ a {
 }
 
 .button {
+  --bs-distance: 3px;
+  --bs: var(--bs-distance) var(--bs-distance) 0 0 var(--button-border-color);
+  --bs-distance-hover: calc(var(--bs-distance) * 2);
+  --bs-hover: var(--bs-distance-hover) var(--bs-distance-hover) 0 0 var(--button-border-color);
+
   display: inline-flex;
   padding: 0.75rem 1.875rem 0.65rem;
   align-items: flex-start;
@@ -149,7 +158,7 @@ a {
   border-radius: 4.375rem;
   border: 3px solid var(--button-border-color);
   background: #FFF;
-  box-shadow: 3px 3px 0px 0px var(--button-border-color);
+  box-shadow: var(--bs);
 
   color: var(--button-text-color);
   text-align: center;
@@ -160,6 +169,16 @@ a {
   line-height: 98%;
   text-decoration: none;
   /* 1.43rem */
+
+  &:hover {
+    box-shadow: var(--bs-hover);
+    transform: translate(calc(var(--bs-distance) * -1), calc(var(--bs-distance) * -1));
+  }
+
+  &:active {
+    box-shadow: none;
+    transform: translate(var(--bs-distance-hover), var(--bs-distance-hover));
+  }
 }
 
 /**
@@ -168,9 +187,20 @@ a {
 
 .top {
   min-height: 90vh;
-  padding: 0 5vw;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+
+  &::after {
+    --separator-height: 80px;
+    content: '';
+    display: block;
+    position: relative;
+    bottom: calc(var(--separator-height) / 2 * -1);
+    left: 0;
+    height: var(--separator-height);
+    background: url('/images/jelly.svg') repeat-x;
+  }
 }
 
 .headlines {
@@ -178,6 +208,7 @@ a {
   flex-direction: column;
   flex-grow: 1;
   justify-content: center;
+  padding: 0 5vw;
 }
 
 .cta {
@@ -187,7 +218,9 @@ a {
 }
 
 main {
-  background: var(--secondary-bg);
+  background:
+    url(/images/bread_holes.svg),
+    var(--secondary-bg);
   padding: 5vh 0;
   display: flex;
   justify-content: center;
