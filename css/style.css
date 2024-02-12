@@ -199,7 +199,7 @@ a {
     bottom: calc(var(--separator-height) / 2 * -1);
     left: 0;
     height: var(--separator-height);
-    background: url('/images/jelly.svg') repeat-x;
+    background: url('/images/jelly.svg#1') repeat-x;
   }
 }
 
